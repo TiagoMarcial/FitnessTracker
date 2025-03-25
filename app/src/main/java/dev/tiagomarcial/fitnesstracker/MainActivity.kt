@@ -54,3 +54,15 @@ class MainActivity : AppCompatActivity() {
 
     private class MainViewHolder(view: View) : RecyclerView.ViewHolder(view)
 }
+
+/* PASSOS PARA O RECYCLEVIEW
+1 - Desenhar o XML
+2 - Dizer onde as células (os botões com o layout) vão aparecer (no componente recyclerview, na tela principal)
+3 - unidade lógica: dizer para o sistema que as células criadas no XML precisam estar dentro da Recycleview + sua quantidade
+3.1 -> para isso precisa de 2 componentes especificos:
+3.1.1 -> o ADAPTADOR para informar para o SDK qual o layout que vai inflar e quantos itens vai ter e como vai
+renderizar a parte dinamica (precisa do adaptador porque os devs do Android nunca vão saber qual layout criaremos)
+3.1.2-> o LAYOUT MANAGER para dizer a posição que será colocado
+
+
+*/
