@@ -3,33 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="50dp"
+    android:background="@color/cardview_shadow_start_color">
 
     <LinearLayout
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
         android:id="@+id/item_container_imc"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@color/colorLightBlue"
         android:orientation="vertical"
-        android:padding="12dp"
-        android:paddingStart="12dp"
-        android:paddingTop="12dp"
-        android:paddingEnd="12dp"
-        android:paddingBottom="12dp">
-
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:id="@+id/item_img_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/baseline_dining_24" />
+            android:layout_width="108dp"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/baseline_no_meals_ouline_24" />
 
         <TextView
             android:id="@+id/item_text_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="@string/label_imc" />
 
     </LinearLayout>

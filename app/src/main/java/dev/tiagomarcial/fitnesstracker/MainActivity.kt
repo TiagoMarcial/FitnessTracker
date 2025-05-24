@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         mainItems.add(
             MainItem(
                 id = 1,
-                drawableID = R.drawable.ic_launcher_foreground,
+                drawableID = R.drawable.baseline_no_meals_ouline_24,
                 textStringID = R.string.label_imc,
                 color = Color.BLUE
             )
@@ -38,9 +38,9 @@ class MainActivity : AppCompatActivity() {
         mainItems.add(
             MainItem(
                 id = 2,
-                drawableID = R.drawable.outline_4k_24,
-                textStringID = R.string.imc_normal,
-                color = Color.GREEN
+                drawableID = R.drawable.baseline_no_meals_ouline_24,
+                textStringID = R.string.label_tmb,
+                color = Color.YELLOW
             )
         )
         mainItems.add(
@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
 //
 //            })
         rvMain.adapter = adapter
-        rvMain.layoutManager = GridLayoutManager(this, 2)
+        rvMain.layoutManager = LinearLayoutManager(this)
 //        btnImc = findViewById((R.id.btn_imc))
 //
 //        btnImc.setOnClickListener{
