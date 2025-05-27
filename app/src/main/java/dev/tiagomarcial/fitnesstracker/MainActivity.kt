@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         mainItems.add(
             MainItem(
                 id = 3,
-                drawableID = R.drawable.outline_account_balance_24,
+                drawableID = R.drawable.ic_launcher_foreground,
                 textStringID = R.string.imc_normal,
                 color = Color.GRAY
             )
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         mainItems.add(
             MainItem(
                 id = 4,
-                drawableID = R.drawable.outline_account_balance_24,
+                drawableID = R.drawable.ic_launcher_foreground,
                 textStringID = R.string.imc_normal,
                 color = Color.MAGENTA
             )

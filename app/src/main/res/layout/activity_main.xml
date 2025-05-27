@@ -9,6 +9,15 @@
         android:gravity="center"
         tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-Saiba mais sobre sua saúde-"
+        android:textSize="30sp"
+        >
+
+    </TextView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_main"
         tools:listitem="@layout/main_item"
