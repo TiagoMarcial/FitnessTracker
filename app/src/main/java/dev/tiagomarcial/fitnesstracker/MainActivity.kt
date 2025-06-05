@@ -79,6 +79,10 @@ class MainActivity : AppCompatActivity() {
                     val i = Intent (this@MainActivity, ImcActivity::class.java)
                     startActivity(i)
                 }
+                2 -> {
+                    val i = Intent (this@MainActivity, TmbActivity::class.java)
+                    startActivity(i)
+                }
             }
         }
 //                val adapter = MainAdapter(mainItems, object : OnItemClickListener {
