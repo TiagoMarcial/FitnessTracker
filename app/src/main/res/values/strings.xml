@@ -5,7 +5,8 @@
         do indivíduo em relação à sua altura e assim indicar se está dentro do peso ideal,
         acima ou abaixo do peso desejado.\n\nPreencha os campos de peso e altura para descobrir o seu IMC.</string>
     <string name="tmb_desc">A TMB representa a energia que o corpo gasta para manter as funções básicas em
-        repouso, como a circulação do sangue, a respiração e a manutenção da temperatura corporal.</string>
+        repouso, como a circulação do sangue, a respiração e a manutenção da temperatura corporal. \n\n
+        Preencha os campos de peso, altura, idade e sexo para descobrir o seu TMB.</string>
     <string name="weight">Peso (Kg)</string>
     <string name="height">Altura (cm)</string>
     <string name="calc">Calcular</string>
