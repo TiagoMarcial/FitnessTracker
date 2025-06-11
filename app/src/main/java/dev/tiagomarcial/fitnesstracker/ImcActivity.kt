@@ -28,14 +28,14 @@ class ImcActivity : AppCompatActivity() {
 
         val btnSend: Button = findViewById(R.id.btn_imc_send)
         btnSend.setOnClickListener {
-            if (!validate()){
+            if (!InputValidator.validate(editHeight.text.toString()) || !InputValidator.validate(editWeight.text.toString())){
                 Toast.makeText(this,R.string.field_messages, Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             val weight = editWeight.text.toString().toInt()
             val height = editHeight.text.toString().toInt()
-            val result = calculateImc(weight,height)
+            val result = Calculator.calculateImc(weight, height)
             Log.d("teste", "resultado: $result")
 
             val imcResponseId = imcResponse(result)
@@ -54,18 +54,6 @@ class ImcActivity : AppCompatActivity() {
         service.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
         }
     }
-
-    private fun validate(): Boolean {
-        return (editHeight.text.toString().isNotEmpty()
-            && editWeight.text.toString().isNotEmpty()
-            && !editWeight.text.toString().startsWith("0")
-            && !editHeight.text.toString().startsWith("0"))
-    }
-
-    private fun calculateImc(weight: Int, height: Int): Double {
-        return weight / ( (height / 100.0) * (height / 100.0)  )
-    }
-
     private fun imcResponse(imc: Double): Int {
         return when {
             imc < 15.0 -> R.string.imc_severely_low_weight
@@ -78,29 +66,4 @@ class ImcActivity : AppCompatActivity() {
             else -> R.string.imc_extreme_weight
         }
     }
-
-        /*if (imc < 15.0) {
-            return R.string.imc_severely_low_weight
-        }
-        else if (imc < 16.0) {
-            return R.string.imc_very_low_weight
-        }
-        else if (imc < 18.5) {
-            return R.string.imc_low_weight
-        }
-        else if (imc < 25.0) {
-            return R.string.imc_normal
-        }
-        else if (imc < 30.0) {
-            return R.string.imc_hight_weight
-        }
-        else if (imc < 35.0) {
-            return R.string.imc_so_hight_weight
-        }
-        else if (imc < 40.0) {
-            return R.string.imc_severely_hight_weight
-        }
-        else {
-            return R.string.imc_extreme_weight
-        }*/
 }

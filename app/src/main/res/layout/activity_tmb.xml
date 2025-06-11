@@ -23,21 +23,21 @@
             android:text="@string/tmb_desc" />
 
         <EditText
-            android:id="@+id/edit_imc_weight"
+            android:id="@+id/edit_tmb_weight"
             style="@style/TextViewForm"
             android:hint="@string/weight"
             android:inputType="number"
             android:maxLength="3" />
 
         <EditText
-            android:id="@+id/edit_imc_height"
+            android:id="@+id/edit_tmb_height"
             style="@style/TextViewForm"
             android:hint="@string/height"
             android:inputType="number"
             android:maxLength="3" />
 
         <EditText
-            android:id="@+id/edit_imc_age"
+            android:id="@+id/edit_tmb_age"
             style="@style/TextViewForm"
             android:hint="@string/age"
             android:inputType="number"
@@ -55,6 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/gender1"
+                android:checked="true"
                 android:textSize="18dp"/>
 
             <RadioButton
@@ -67,7 +68,7 @@
 
         <Button
             android:layout_marginTop="20dp"
-            android:id="@+id/btn_imc_send"
+            android:id="@+id/btn_tmb_send"
             style="@style/TextViewForm"
             android:backgroundTint="@color/black"
             android:text="@string/calc" />
