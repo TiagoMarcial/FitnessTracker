@@ -22,7 +22,6 @@ class TmbActivity : AppCompatActivity() {
         editHeight = findViewById(R.id.edit_tmb_height)
         editAge = findViewById(R.id.edit_tmb_age)
         editGender = findViewById<RadioGroup>(R.id.genderGroup)
-        val gender = editGender.checkedRadioButtonId
         val btnSend: Button = findViewById(R.id.btn_tmb_send)
 
         btnSend.setOnClickListener {
@@ -30,9 +29,16 @@ class TmbActivity : AppCompatActivity() {
                 Toast.makeText(this,R.string.field_messages, Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            val gender = editGender.checkedRadioButtonId
             val weight = editWeight.text.toString().toInt()
             val height = editHeight.text.toString().toInt()
             val age = editAge.text.toString().toInt()
+            val selectedGender = when (gender) {
+                R.id.radioMale -> Gender.Male
+                R.id.radioFemale -> Gender.Female
+                else -> Gender.Male
+            }
+
 
         }
     }
