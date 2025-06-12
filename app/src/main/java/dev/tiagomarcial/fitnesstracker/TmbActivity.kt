@@ -1,6 +1,7 @@
 package dev.tiagomarcial.fitnesstracker
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioGroup
@@ -29,17 +30,20 @@ class TmbActivity : AppCompatActivity() {
                 Toast.makeText(this,R.string.field_messages, Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            val gender = editGender.checkedRadioButtonId
+
             val weight = editWeight.text.toString().toInt()
             val height = editHeight.text.toString().toInt()
             val age = editAge.text.toString().toInt()
+            val gender = editGender.checkedRadioButtonId
             val selectedGender = when (gender) {
                 R.id.radioMale -> Gender.Male
                 R.id.radioFemale -> Gender.Female
                 else -> Gender.Male
+
             }
 
-
+            val result = Calculator.calculateTmb(weight, height, age, selectedGender)
+            Log.d("teste", "resultado: $result")
         }
     }
 
