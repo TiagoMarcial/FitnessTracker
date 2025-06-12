@@ -46,5 +46,4 @@ class TmbActivity : AppCompatActivity() {
             Log.d("teste", "resultado: $result")
         }
     }
-
 }
