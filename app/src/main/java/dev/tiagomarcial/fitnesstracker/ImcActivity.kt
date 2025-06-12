@@ -39,19 +39,9 @@ class ImcActivity : AppCompatActivity() {
             Log.d("teste", "resultado: $result")
 
             val imcResponseId = HealthEvaluator.imcResponse(result)
-            val dialog = AlertDialog.Builder(this)
-            .setTitle(getString(R.string.imc_response, result))
-            .setMessage(imcResponseId)
-            .setPositiveButton(android.R.string.ok, object : DialogInterface.OnClickListener{
-                override fun onClick(dialog: DialogInterface?, wich: Int) {
 
-                }
-            })
-
-            .create()
-            .show()
-        val service = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        service.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
+            DialogHelper.showSimpleDialog(this, getString(R.string.imc_response, result), getString(imcResponseId))
+            DialogHelper.hideKeyboard(this, currentFocus)
         }
     }
 }
