@@ -1,12 +1,5 @@
 <resources>
     <string name="app_name">Fitness Tracker</string>
-    <string name="label_imc">IMC</string>
-    <string name="imc_desc">IMC é a sigla para Índice de Massa Corporal que serve para avaliar o peso
-        do indivíduo em relação à sua altura e assim indicar se está dentro do peso ideal,
-        acima ou abaixo do peso desejado.\n\nPreencha os campos de peso e altura para descobrir o seu IMC.</string>
-    <string name="tmb_desc">A TMB representa a energia que o corpo gasta para manter as funções básicas em
-        repouso, como a circulação do sangue, a respiração e a manutenção da temperatura corporal. \n\n
-        Preencha os campos de peso, altura, idade e sexo para descobrir o seu TMB.</string>
     <string name="weight">Peso (Kg)</string>
     <string name="height">Altura (cm)</string>
     <string name="calc">Calcular</string>
@@ -14,7 +7,11 @@
     <string name="age">Idade</string>
     <string name="gender1">Masculino</string>
     <string name="gender2">Feminino</string>
-// IMC
+    // IMC
+    <string name="label_imc">IMC</string>
+    <string name="imc_desc">IMC é a sigla para Índice de Massa Corporal que serve para avaliar o peso
+        do indivíduo em relação à sua altura e assim indicar se está dentro do peso ideal,
+        acima ou abaixo do peso desejado.\n\nPreencha os campos de peso e altura para descobrir o seu IMC.</string>
     <string name="imc_severely_low_weight">Severamente abaixo do peso</string>
     <string name="imc_very_low_weight">Muito abaixo do peso</string>
     <string name="imc_low_weight">Abaixo do peso</string>
@@ -23,10 +20,17 @@
     <string name="imc_so_hight_weight">Moderadamente obeso</string>
     <string name="imc_severely_hight_weight">Severamente obeso</string>
     <string name="imc_extreme_weight">Extremamente obeso</string>
-    <string name="imc_response">Seu IMC é: %1$.2f</string>
+    <string name="imc_response">Seu IMC é: %1$.2f </string>
 
-// TMB
+    // TMB
     <string name="label_tmb">TMB</string>
-
-
+    <string name="tmb_desc">O cálculo da TMB (Taxa de Metabolismo Basal) indica quantas calorias o seu corpo gasta em repouso absoluto, apenas para manter funções
+        vitais como respiração, circulação sanguínea, controle da temperatura corporal, funcionamento do cérebro e dos órgãos. \n\n
+        Preencha os campos de peso, altura, idade e sexo para descobrir o seu TMB.</string>
+    <string name="tmb_severely_low_weight">TMB muito baixa: Pode indicar baixa massa muscular ou condições que reduzem o metabolismo (ex.: hipotireoidismo, sedentarismo).</string>
+    <string name="tmb_low_weight">TMB baixa: Comum em mulheres, pessoas com menor massa muscular ou com baixa atividade física.</string>
+    <string name="tmb_normal">TMB Média: Faixa comum para pessoas com estilo de vida moderadamente ativo e composição corporal balanceada.</string>
+    <string name="tmb_hight_weight">TMB alta: Comum em homens, pessoas com maior massa muscular ou que praticam atividades físicas regulares.</string>
+    <string name="tmb_severely_hight_weight">TMB muito alta: Geralmente encontrada em pessoas com alta massa muscular ou atletas que praticam exercícios intensos.</string>
+    <string name="tmb_response">Seu TMB é: %1$.2f kcal</string>
 </resources>

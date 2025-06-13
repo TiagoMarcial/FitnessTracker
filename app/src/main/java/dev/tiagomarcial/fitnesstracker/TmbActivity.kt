@@ -39,11 +39,14 @@ class TmbActivity : AppCompatActivity() {
                 R.id.radioMale -> Gender.Male
                 R.id.radioFemale -> Gender.Female
                 else -> Gender.Male
-
             }
 
             val result = Calculator.calculateTmb(weight, height, age, selectedGender)
             Log.d("teste", "resultado: $result")
+            val tmbResponseId = HealthEvaluator.tmbResponse(result)
+
+            DialogHelper.showSimpleDialog(this, getString(R.string.tmb_response, result), getString(tmbResponseId))
+            DialogHelper.hideKeyboard(this, currentFocus)
         }
     }
 }
