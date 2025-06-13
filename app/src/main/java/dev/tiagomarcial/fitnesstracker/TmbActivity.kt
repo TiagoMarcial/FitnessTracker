@@ -26,8 +26,11 @@ class TmbActivity : AppCompatActivity() {
         val btnSend: Button = findViewById(R.id.btn_tmb_send)
 
         btnSend.setOnClickListener {
-            if (!InputValidator.validate(editHeight.text.toString()) || !InputValidator.validate(editWeight.text.toString()) || !InputValidator.validate(editAge.text.toString())) {
-                Toast.makeText(this,R.string.field_messages, Toast.LENGTH_SHORT).show()
+            if (!InputValidator.validate(editHeight.text.toString()) || !InputValidator.validate(
+                    editWeight.text.toString()
+                ) || !InputValidator.validate(editAge.text.toString())
+            ) {
+                Toast.makeText(this, R.string.field_messages, Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -45,7 +48,11 @@ class TmbActivity : AppCompatActivity() {
             Log.d("teste", "resultado: $result")
             val tmbResponseId = HealthEvaluator.tmbResponse(result)
 
-            DialogHelper.showSimpleDialog(this, getString(R.string.tmb_response, result), getString(tmbResponseId))
+            DialogHelper.showSimpleDialog(
+                this,
+                getString(R.string.tmb_response, result),
+                getString(tmbResponseId)
+            )
             DialogHelper.hideKeyboard(this, currentFocus)
         }
     }

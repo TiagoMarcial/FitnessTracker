@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
 //        btnImc = findViewById((R.id.btn_imc))
 //
 //        btnImc.setOnClickListener{
-//            //Navegando pra próxima tela, cumpadre
+//            //Navegando pra próxima tela
 //            val i = Intent(this, ImcActivity::class.java)
 //            startActivity(i)
 //        }
