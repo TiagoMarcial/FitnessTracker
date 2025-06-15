@@ -59,14 +59,6 @@ class MainActivity : AppCompatActivity() {
                 color = Color.MAGENTA
             )
         )
-        mainItems.add(
-            MainItem(
-                id = 5,
-                drawableID = R.drawable.ic_launcher_foreground,
-                textStringID = R.string.label_imc,
-                color = Color.CYAN
-            )
-        )
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -81,6 +73,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 2 -> {
                     val i = Intent (this@MainActivity, TmbActivity::class.java)
+                    startActivity(i)
+                }
+                3 -> { val i = Intent (this@MainActivity, GetActivity::class.java)
                     startActivity(i)
                 }
             }

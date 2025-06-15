@@ -85,7 +85,7 @@
 
         <Button
             android:layout_marginTop="20dp"
-            android:id="@+id/btn_tmb_send"
+            android:id="@+id/btn_get_send"
             style="@style/TextViewForm"
             android:backgroundTint="@color/black"
             android:text="@string/calc" />
