@@ -65,7 +65,16 @@ class GetActivity : AppCompatActivity() {
             val result = Calculator.calculateTmb(weight, height, age, selectedGender)
             Log.d("teste", "resultado: $result")
             val tmbResponseId = HealthEvaluator.tmbResponse(result)
-            val selectedLevel = spinner.selectedItem.toString()
+            val level = spinner.selectedItem.toString()
+            val levelMap = mapOf(
+                "Sedentário" to PhysicalActivityLevel.Sedentary,
+                "Leve" to PhysicalActivityLevel.Light,
+                "Moderado" to PhysicalActivityLevel.Moderate,
+                "Ativo" to PhysicalActivityLevel.Active,
+                "Extremo" to PhysicalActivityLevel.Extreme
+            )
+            val selectedlevel = levelMap[level] ?: PhysicalActivityLevel.Sedentary
+
 
 
             DialogHelper.showSimpleDialog(
