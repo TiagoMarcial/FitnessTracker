@@ -11,7 +11,7 @@
     <string name="label_imc">IMC</string>
     <string name="imc_desc">IMC é a sigla para Índice de Massa Corporal que serve para avaliar o peso
         do indivíduo em relação à sua altura e assim indicar se está dentro do peso ideal,
-        acima ou abaixo do peso desejado.\n\nPreencha os campos de peso e altura para descobrir o seu IMC.</string>
+        acima ou abaixo do peso desejado.\n\n Preencha os campos de peso e altura para descobrir o seu IMC.</string>
     <string name="imc_severely_low_weight">Severamente abaixo do peso</string>
     <string name="imc_very_low_weight">Muito abaixo do peso</string>
     <string name="imc_low_weight">Abaixo do peso</string>
@@ -33,4 +33,16 @@
     <string name="tmb_hight_weight">TMB alta: Comum em homens, pessoas com maior massa muscular ou que praticam atividades físicas regulares.</string>
     <string name="tmb_severely_hight_weight">TMB muito alta: Geralmente encontrada em pessoas com alta massa muscular ou atletas que praticam exercícios intensos.</string>
     <string name="tmb_response">Seu TMB é: %1$.2f kcal</string>
+
+    //GET
+    <string name="get_desc">O Gasto Energético Total (GET) representa a quantidade total de calorias que uma pessoa gasta em um dia, considerando:\n
+TMB (Taxa Metabólica Basal) → calorias gastas em repouso.\n
+Atividades físicas e rotineiras → andar, trabalhar, treinar, etc. </string>
+    <string name="get_physical_activity">Seu nível de atividade física</string>
+    <string name="get_sedentary">Sedentário</string>
+    <string name="get_light">Leve</string>
+    <string name="get_moderate">Moderado</string>
+    <string name="get_active">Ativo</string>
+    <string name="get_extreme">Extremo</string>
+
 </resources>
