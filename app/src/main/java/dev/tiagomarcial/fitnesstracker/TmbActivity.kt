@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -37,21 +38,17 @@ class TmbActivity : AppCompatActivity() {
             val weight = editWeight.text.toString().toInt()
             val height = editHeight.text.toString().toInt()
             val age = editAge.text.toString().toInt()
-            val gender = editGender.checkedRadioButtonId
-            val selectedGender = when (gender) {
-                R.id.radioMale -> Gender.Male
-                R.id.radioFemale -> Gender.Female
-                else -> Gender.Male
-            }
+            val selectedId = editGender.checkedRadioButtonId
+            val selectedRadio = findViewById<RadioButton>(selectedId)
+            val gender = selectedRadio.text.toString()
+            val selectedGender = Gender.selectedGender(gender)
 
             val result = Calculator.calculateTmb(weight, height, age, selectedGender)
             Log.d("teste", "resultado: $result")
             val tmbResponseId = HealthEvaluator.tmbResponse(result)
 
             DialogHelper.showSimpleDialog(
-                this,
-                getString(R.string.tmb_response, result),
-                getString(tmbResponseId)
+                this, getString(R.string.tmb_response, result), getString(tmbResponseId)
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }

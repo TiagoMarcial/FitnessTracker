@@ -11,15 +11,15 @@ import androidx.appcompat.app.AppCompatActivity
 
 class ImcActivity : AppCompatActivity() {
 
-    private lateinit var editWeight: EditText
-    private lateinit var editHeight: EditText
+//    private lateinit var editWeight: EditText
+//    private lateinit var editHeight: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imc)
 
-        editWeight = findViewById(R.id.edit_imc_weight)
-        editHeight = findViewById(R.id.edit_imc_height)
+        val editWeight: EditText = findViewById(R.id.edit_imc_weight)
+        var editHeight: EditText = findViewById(R.id.edit_imc_height)
 
         val btnSend: Button = findViewById(R.id.btn_imc_send)
         btnSend.setOnClickListener {
