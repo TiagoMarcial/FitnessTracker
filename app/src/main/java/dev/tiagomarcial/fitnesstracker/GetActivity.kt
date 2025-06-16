@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.Toast
@@ -56,24 +57,17 @@ class GetActivity : AppCompatActivity() {
             val height = editHeight.text.toString().toInt()
             val age = editAge.text.toString().toInt()
             val gender = editGender.checkedRadioButtonId
-            val selectedGender = when (gender) {
-                R.id.radioMale -> Gender.Male
-                R.id.radioFemale -> Gender.Female
-                else -> Gender.Male
-            }
+
+            val selectedRadio = findViewById<RadioButton>(gender)
+            val stringRadio = selectedRadio.toString()
+            val selectedGender = Gender.selectedGender(stringRadio)
 
             val result = Calculator.calculateTmb(weight, height, age, selectedGender)
             Log.d("teste", "resultado: $result")
-            val tmbResponseId = HealthEvaluator.tmbResponse(result)
+
             val level = spinner.selectedItem.toString()
-            val levelMap = mapOf(
-                "Sedentário" to PhysicalActivityLevel.Sedentary,
-                "Leve" to PhysicalActivityLevel.Light,
-                "Moderado" to PhysicalActivityLevel.Moderate,
-                "Ativo" to PhysicalActivityLevel.Active,
-                "Extremo" to PhysicalActivityLevel.Extreme
-            )
-            val selectedlevel = levelMap[level] ?: PhysicalActivityLevel.Sedentary
+            val levelSelected = PhysicalActivityLevel.fromLabel(level)
+
 
 
 

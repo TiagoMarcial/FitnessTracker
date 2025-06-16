@@ -19,7 +19,7 @@ class ImcActivity : AppCompatActivity() {
         setContentView(R.layout.activity_imc)
 
         val editWeight: EditText = findViewById(R.id.edit_imc_weight)
-        var editHeight: EditText = findViewById(R.id.edit_imc_height)
+        val editHeight: EditText = findViewById(R.id.edit_imc_height)
 
         val btnSend: Button = findViewById(R.id.btn_imc_send)
         btnSend.setOnClickListener {

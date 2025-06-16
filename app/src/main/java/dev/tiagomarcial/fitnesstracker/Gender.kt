@@ -1,8 +1,7 @@
 package dev.tiagomarcial.fitnesstracker
 
 enum class Gender {
-    Male,
-    Female;
+    Male, Female;
 
     companion object {
         fun selectedGender(gender: String): Gender {

@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class TmbActivity : AppCompatActivity() {
-
     private lateinit var editWeight: EditText
     private lateinit var editHeight: EditText
     private lateinit var editAge: EditText
