@@ -62,12 +62,13 @@ class GetActivity : AppCompatActivity() {
             val stringRadio = selectedRadio.toString()
             val selectedGender = Gender.selectedGender(stringRadio)
 
-            val result = Calculator.calculateTmb(weight, height, age, selectedGender)
-            Log.d("teste", "resultado: $result")
+            val resultTMB = Calculator.calculateTmb(weight, height, age, selectedGender)
+            Log.d("teste", "resultado: $resultTMB")
 
             val level = spinner.selectedItem.toString()
             val levelSelected = PhysicalActivityLevel.fromLabel(level)
 
+            val get = Calculator.calculateGet(resultTMB, levelSelected)
 
 
 

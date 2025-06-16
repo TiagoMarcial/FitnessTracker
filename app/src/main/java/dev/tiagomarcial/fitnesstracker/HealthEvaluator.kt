@@ -19,4 +19,8 @@ object HealthEvaluator {
         tmb < 2200 -> R.string.tmb_hight_weight
         else -> R.string.tmb_severely_hight_weight
     }
+
+    fun getResponse (get: Double): Int = when {
+
+    }
 }

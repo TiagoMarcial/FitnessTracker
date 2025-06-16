@@ -10,4 +10,7 @@ object Calculator {
             Gender.Female -> 447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age)
         }
     }
+    fun calculateGet( tmb: Double, nivel: PhysicalActivityLevel): Double {
+        return tmb * nivel.multiplier
+    }
 }
