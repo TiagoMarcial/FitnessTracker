@@ -68,14 +68,14 @@ class GetActivity : AppCompatActivity() {
             val level = spinner.selectedItem.toString()
             val levelSelected = PhysicalActivityLevel.fromLabel(level)
 
-            val get = Calculator.calculateGet(resultTMB, levelSelected)
+            val getResult = Calculator.calculateGet(resultTMB, levelSelected)
 
-
+            val getResponse = HealthEvaluator.getResponse(getResult)
 
             DialogHelper.showSimpleDialog(
                 this,
-                getString(R.string.tmb_response, result),
-                getString(tmbResponseId)
+                getString(R.string.tmb_response, getResult),
+                getString(getResponse)
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }
