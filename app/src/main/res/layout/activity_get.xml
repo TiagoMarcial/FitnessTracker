@@ -23,21 +23,21 @@
             android:text="@string/get_desc" />
 
         <EditText
-            android:id="@+id/edit_tmb_weight"
+            android:id="@+id/edit_get_weight"
             style="@style/TextViewForm"
             android:hint="@string/weight"
             android:inputType="number"
             android:maxLength="3" />
 
         <EditText
-            android:id="@+id/edit_tmb_height"
+            android:id="@+id/edit_get_height"
             style="@style/TextViewForm"
             android:hint="@string/height"
             android:inputType="number"
             android:maxLength="3" />
 
         <EditText
-            android:id="@+id/edit_tmb_age"
+            android:id="@+id/edit_get_age"
             style="@style/TextViewForm"
             android:hint="@string/age"
             android:inputType="number"

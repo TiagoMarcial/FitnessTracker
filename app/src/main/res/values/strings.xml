@@ -49,7 +49,7 @@ Atividades físicas e rotineiras → andar, trabalhar, treinar, etc. </string>
     <string name="get_nivel_normal">GET Média: Faixa padrão para adultos com atividade leve a moderada.</string>
     <string name="get_nivel_hight">GET alta: Indica atividade física regular, metabolismo mais acelerado ou maior massa.</string>
     <string name="get_nivel_severely_hight">GET muito alta: Comum em atletas, pessoas com metabolismo acelerado ou trabalhos físicos intensos.</string>
-    <string name="get_response">Seu GET é: %1$.2f kcal</string>
+    <string name="get_response">Seu GET é: %1$.2f kcal/dia </string>
 
 
 </resources>
