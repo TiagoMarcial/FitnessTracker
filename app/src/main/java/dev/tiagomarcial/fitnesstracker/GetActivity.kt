@@ -17,12 +17,14 @@ import dev.tiagomarcial.fitnesstracker.R.id.btn_get_send
 
 class GetActivity : AppCompatActivity() {
 
-    private lateinit var editWeight: EditText
-    private lateinit var editHeight: EditText
-    private lateinit var editAge: EditText
-    private lateinit var editGender: RadioGroup
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        lateinit var editWeight: EditText
+        lateinit var editHeight: EditText
+        lateinit var editAge: EditText
+        lateinit var editGender: RadioGroup
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_get)
@@ -31,6 +33,7 @@ class GetActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         val spinner = findViewById<Spinner>(R.id.spinnerPhysicalActivity)
         val activityLevels = listOf(
             getString(R.string.get_sedentary),
@@ -59,7 +62,7 @@ class GetActivity : AppCompatActivity() {
             val gender = editGender.checkedRadioButtonId
 
             val selectedRadio = findViewById<RadioButton>(gender)
-            val stringRadio = selectedRadio.toString()
+            val stringRadio = selectedRadio.text.toString()
             val selectedGender = Gender.selectedGender(stringRadio)
 
             val resultTMB = Calculator.calculateTmb(weight, height, age, selectedGender)
@@ -74,7 +77,7 @@ class GetActivity : AppCompatActivity() {
 
             DialogHelper.showSimpleDialog(
                 this,
-                getString(R.string.tmb_response, getResult),
+                getString(R.string.get_response, getResult),
                 getString(getResponse)
             )
             DialogHelper.hideKeyboard(this, currentFocus)

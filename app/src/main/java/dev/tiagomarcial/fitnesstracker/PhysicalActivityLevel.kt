@@ -12,20 +12,16 @@ enum class PhysicalActivityLevel(val multiplier: Double) {
             return when (level) {
 
                 "Sedentário" -> PhysicalActivityLevel.Sedentary
-                    ,
+
                 "Leve" -> PhysicalActivityLevel.Light
 
-                    ,
                 "Moderado" -> PhysicalActivityLevel.Moderate
 
-                    ,
                 "Ativo" -> PhysicalActivityLevel.Active
 
-                    ,
                 "Extremo" -> PhysicalActivityLevel.Extreme
 
                 else -> Sedentary
-
             }
         }
     }

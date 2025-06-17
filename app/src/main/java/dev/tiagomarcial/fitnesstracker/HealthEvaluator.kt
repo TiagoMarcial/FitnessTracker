@@ -21,6 +21,10 @@ object HealthEvaluator {
     }
 
     fun getResponse (get: Double): Int = when {
-
+        get < 1500 -> R.string.get_nivel_sedentary
+        get < 1800 -> R.string.get_nivel_low
+        get < 2200 -> R.string.get_nivel_normal
+        get < 2800 -> R.string.get_nivel_hight
+        else -> R.string.get_nivel_severely_hight
     }
 }
