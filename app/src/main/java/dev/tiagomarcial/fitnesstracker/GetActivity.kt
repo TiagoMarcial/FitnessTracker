@@ -18,11 +18,6 @@ import dev.tiagomarcial.fitnesstracker.R.id.btn_get_send
 
 class GetActivity : AppCompatActivity() {
 
-    lateinit var editWeight: EditText
-    lateinit var editHeight: EditText
-    lateinit var editAge: EditText
-    lateinit var editGender: RadioGroup
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -33,10 +28,10 @@ class GetActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        editWeight = findViewById(R.id.edit_get_weight)
-        editHeight = findViewById(R.id.edit_get_height)
-        editAge = findViewById(R.id.edit_get_age)
-        editGender = findViewById<RadioGroup>(R.id.genderGroup)
+        var editWeight: EditText = findViewById(R.id.edit_get_weight)
+        var editHeight: EditText = findViewById(R.id.edit_get_height)
+        var editAge: EditText = findViewById(R.id.edit_get_age)
+        var editGender: RadioGroup = findViewById<RadioGroup>(R.id.genderGroup)
 
 
         val spinner = findViewById<Spinner>(R.id.spinnerPhysicalActivity)

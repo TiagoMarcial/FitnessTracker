@@ -78,6 +78,9 @@ class MainActivity : AppCompatActivity() {
                 3 -> { val i = Intent (this@MainActivity, GetActivity::class.java)
                     startActivity(i)
                 }
+                4 -> { val i = Intent (this@MainActivity, PgcActivity::class.java)
+                    startActivity(i)
+                }
             }
         }
 //                val adapter = MainAdapter(mainItems, object : OnItemClickListener {

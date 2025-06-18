@@ -36,8 +36,8 @@
 
     //GET
     <string name="get_desc">O Gasto Energético Total (GET) representa a quantidade total de calorias que uma pessoa gasta em um dia, considerando:\n
-TMB (Taxa Metabólica Basal) → calorias gastas em repouso.\n
-Atividades físicas e rotineiras → andar, trabalhar, treinar, etc. </string>
+        TMB (Taxa Metabólica Basal) → calorias gastas em repouso.\n
+        Atividades físicas e rotineiras → andar, trabalhar, treinar, etc. </string>
     <string name="get_physical_activity">Seu nível de atividade física</string>
     <string name="get_sedentary">Sedentário</string>
     <string name="get_light">Leve</string>
@@ -50,6 +50,6 @@ Atividades físicas e rotineiras → andar, trabalhar, treinar, etc. </string>
     <string name="get_nivel_hight">GET alta: Indica atividade física regular, metabolismo mais acelerado ou maior massa.</string>
     <string name="get_nivel_severely_hight">GET muito alta: Comum em atletas, pessoas com metabolismo acelerado ou trabalhos físicos intensos.</string>
     <string name="get_response">Seu GET é: %1$.2f kcal/dia </string>
-
-
+    //PGC
+    <string name="pgc_desc">O PGC (Percentual de Gordura Corporal) é uma estimativa da porcentagem do corpo que é composta por gordura.</string>
 </resources>

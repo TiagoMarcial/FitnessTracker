@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FitnessTracker"
         tools:targetApi="31">
         <activity
+            android:name=".PgcActivity"
+            android:exported="false" />
+        <activity
             android:name=".GetActivity"
             android:exported="false" />
         <activity

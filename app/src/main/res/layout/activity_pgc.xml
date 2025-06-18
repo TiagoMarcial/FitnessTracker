@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".ImcActivity">
+
+        <TextView
+            style="@style/TextViewForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/pgc_desc" />
+
+        <EditText
+            android:id="@+id/edit_pgc_weight"
+            style="@style/TextViewForm"
+            android:hint="@string/weight"
+            android:inputType="number"
+            android:maxLength="3" />
+
+        <EditText
+            android:id="@+id/edit_pgc_height"
+            style="@style/TextViewForm"
+            android:hint="@string/height"
+            android:inputType="number"
+            android:maxLength="3" />
+
+        <EditText
+            android:id="@+id/edit_pgc_age"
+            style="@style/TextViewForm"
+            android:hint="@string/age"
+            android:inputType="number"
+            android:maxLength="3"
+            android:layout_marginBottom="6dp"/>
+
+        <RadioGroup
+            android:id="@+id/genderGroupPGC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gender1"
+                android:checked="true"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gender2"
+                android:textSize="18dp"/>
+        </RadioGroup>
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:id="@+id/btn_pgc_send"
+            style="@style/TextViewForm"
+            android:backgroundTint="@color/black"
+            android:text="@string/calc" />
+
+
+    </LinearLayout>
+
+</ScrollView>
