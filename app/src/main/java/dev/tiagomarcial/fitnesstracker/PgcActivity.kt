@@ -42,9 +42,14 @@ class PgcActivity : AppCompatActivity() {
             val genderSelected = findViewById<RadioButton>(genderRadio)
             val gender = Gender.selectedGender(genderSelected.text.toString())
 
+            val imcResult = Calculator.calculateImc(weight, height)
+            val pgcResult = Calculator.calculatePgc(imcResult, age, gender)
+            val pgcResponse = HealthEvaluator.pgcResponse(pgcResult, gender)
 
+            DialogHelper.showSimpleDialog(
+                this, getString(R.string.pgc_response, pgcResult), getString(pgcResponse)
+            )
+            DialogHelper.hideKeyboard(this, currentFocus)
         }
-
-
     }
 }

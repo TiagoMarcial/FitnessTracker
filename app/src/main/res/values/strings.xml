@@ -50,6 +50,22 @@
     <string name="get_nivel_hight">GET alta: Indica atividade física regular, metabolismo mais acelerado ou maior massa.</string>
     <string name="get_nivel_severely_hight">GET muito alta: Comum em atletas, pessoas com metabolismo acelerado ou trabalhos físicos intensos.</string>
     <string name="get_response">Seu GET é: %1$.2f kcal/dia </string>
+
     //PGC
+    //man
     <string name="pgc_desc">O PGC (Percentual de Gordura Corporal) é uma estimativa da porcentagem do corpo que é composta por gordura.</string>
+    <string name="pgc_man_excelent">Excelente! Corpo atlético, definição muscular. </string>
+    <string name="pgc_man_good">Bom! Boa forma, visivelmente saudável. </string>
+    <string name="pgc_man_acceptable">Aceitável! Saudável, pouca definição. </string>
+    <string name="pgc_man_bad">Acima do ideal! Leve excesso de gordura. </string>
+    <string name="pgc_man_very_bad">Obesidade! Alto risco à saúde. </string>
+    //woman
+    <string name="pgc_woman_excelent">Excelente! Corpo atlético, definição muscular. </string>
+    <string name="pgc_woman_good">Bom! Boa forma, visivelmente saudável. </string>
+    <string name="pgc_woman_acceptable">Aceitável! Saudável, pouca definição. </string>
+    <string name="pgc_woman_bad">Acima do ideal! Leve excesso de gordura. </string>
+    <string name="pgc_woman_very_bad">Obesidade! Alto risco à saúde. </string>
+
+    <string name="pgc_response">Seu PGC é: %1$.2f %%</string>
+
 </resources>

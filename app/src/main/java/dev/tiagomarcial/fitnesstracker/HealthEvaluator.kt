@@ -27,4 +27,20 @@ object HealthEvaluator {
         get < 2800 -> R.string.get_nivel_hight
         else -> R.string.get_nivel_severely_hight
     }
+
+    fun pgcResponse (pgc: Double, gender: Gender): Int = when {
+        //man
+        pgc < 10 && gender == Gender.Male -> R.string.pgc_man_excelent
+        pgc < 14 && gender == Gender.Male -> R.string.pgc_man_good
+        pgc < 19 && gender == Gender.Male -> R.string.pgc_man_acceptable
+        pgc <= 24 && gender == Gender.Male -> R.string.pgc_man_bad
+        pgc > 24 && gender == Gender.Male -> R.string.pgc_man_very_bad
+        //woman
+        pgc < 18 && gender == Gender.Female -> R.string.pgc_woman_excelent
+        pgc < 22 && gender == Gender.Female -> R.string.pgc_woman_good
+        pgc < 29 && gender == Gender.Female -> R.string.pgc_woman_acceptable
+        pgc < 34 && gender == Gender.Female -> R.string.pgc_woman_bad
+        else -> R.string.pgc_woman_very_bad
+
+    }
 }
