@@ -11,9 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 class ImcActivity : AppCompatActivity() {
 
-//    private lateinit var editWeight: EditText
-//    private lateinit var editHeight: EditText
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imc)
