@@ -9,11 +9,13 @@ object DialogHelper {
     fun showSimpleDialog(context: Context, title: String, message: String,
     positiveText: String = "Ok", negativeText: String? = null,
     onPositiveClick: (() -> Unit)? = null, onNegativeClick: (() -> Unit)? = null ) {
-        AlertDialog.Builder(context)
+        val buider = AlertDialog.Builder(context)
             .setTitle(title)
             .setMessage(message)
-            .setPositiveButton(android.R.string.ok, null)
-            .show()
+            .setPositiveButton(android.R.string.ok) { dialog, _ ->
+                onPositiveClick?.invoke()
+            }
+
 
     }
     fun hideKeyboard(context: Context, view: View?) {
