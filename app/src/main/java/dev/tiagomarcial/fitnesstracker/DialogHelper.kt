@@ -7,17 +7,22 @@ import androidx.appcompat.app.AlertDialog
 
 object DialogHelper {
     fun showSimpleDialog(context: Context, title: String, message: String,
-    positiveText: String = "Ok", negativeText: String? = null,
+    positiveText: String = "Ok", negativeText: String? = "Salvar",
     onPositiveClick: (() -> Unit)? = null, onNegativeClick: (() -> Unit)? = null ) {
         val buider = AlertDialog.Builder(context)
             .setTitle(title)
             .setMessage(message)
-            .setPositiveButton(android.R.string.ok) { dialog, _ ->
+            .setPositiveButton(positiveText) { dialog, _ ->
                 onPositiveClick?.invoke()
             }
-
-
+        if (onNegativeClick != null) {
+            buider.setNegativeButton(negativeText) {dialog, _ -> onNegativeClick.invoke()}
+        }
+        buider.show()
     }
+
+
+
     fun hideKeyboard(context: Context, view: View?) {
         val inputMethodManager =
             context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
