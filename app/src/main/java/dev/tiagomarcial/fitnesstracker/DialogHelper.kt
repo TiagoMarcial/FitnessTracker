@@ -7,7 +7,7 @@ import androidx.appcompat.app.AlertDialog
 
 object DialogHelper {
     fun showSimpleDialog(context: Context, title: String, message: String,
-    positiveText: String = "Ok", negativeText: String? = "Salvar",
+    positiveText: String = "Ok", negativeText: String? = null,
     onPositiveClick: (() -> Unit)? = null, onNegativeClick: (() -> Unit)? = null ) {
         val buider = AlertDialog.Builder(context)
             .setTitle(title)
@@ -15,8 +15,8 @@ object DialogHelper {
             .setPositiveButton(positiveText) { dialog, _ ->
                 onPositiveClick?.invoke()
             }
-        if (onNegativeClick != null) {
-            buider.setNegativeButton(negativeText) {dialog, _ -> onNegativeClick.invoke()}
+        if (negativeText != null) {
+            buider.setNegativeButton(negativeText) {dialog, _ -> onNegativeClick?.invoke()}
         }
         buider.show()
     }
