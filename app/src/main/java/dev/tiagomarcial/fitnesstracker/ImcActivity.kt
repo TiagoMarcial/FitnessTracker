@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import dev.tiagomarcial.fitnesstracker.model.App
 
 
 class ImcActivity : AppCompatActivity() {
@@ -39,7 +40,9 @@ class ImcActivity : AppCompatActivity() {
                 this,
                 getString(R.string.imc_response, result),
                 getString(imcResponseId),
-                negativeText = "Salvar"
+                negativeText = "Salvar",
+                onNegativeClick = { SaveHelper.salvarImc(this, result) }
+
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }

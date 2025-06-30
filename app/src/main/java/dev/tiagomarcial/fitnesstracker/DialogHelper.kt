@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AlertDialog
+import dev.tiagomarcial.fitnesstracker.model.App
 
 object DialogHelper {
     fun showSimpleDialog(context: Context, title: String, message: String,
@@ -20,8 +21,6 @@ object DialogHelper {
         }
         buider.show()
     }
-
-
 
     fun hideKeyboard(context: Context, view: View?) {
         val inputMethodManager =
