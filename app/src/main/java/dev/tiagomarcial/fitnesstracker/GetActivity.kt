@@ -78,7 +78,9 @@ class GetActivity : AppCompatActivity() {
             DialogHelper.showSimpleDialog(
                 this,
                 getString(R.string.get_response, getResult),
-                getString(getResponse)
+                getString(getResponse),
+                negativeText = "Salvar",
+                onNegativeClick = { SaveHelper.salvarImc(this, getResult) }
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }

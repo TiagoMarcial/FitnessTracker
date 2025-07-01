@@ -47,7 +47,10 @@ class PgcActivity : AppCompatActivity() {
             val pgcResponse = HealthEvaluator.pgcResponse(pgcResult, gender)
 
             DialogHelper.showSimpleDialog(
-                this, getString(R.string.pgc_response, pgcResult), getString(pgcResponse)
+                this, getString(R.string.pgc_response, pgcResult),
+                getString(pgcResponse),
+                negativeText = "Salvar",
+                onNegativeClick = { SaveHelper.salvarImc(this, pgcResult) }
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }
