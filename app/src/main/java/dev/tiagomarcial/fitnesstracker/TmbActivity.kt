@@ -47,7 +47,10 @@ class TmbActivity : AppCompatActivity() {
             val tmbResponseId = HealthEvaluator.tmbResponse(result)
 
             DialogHelper.showSimpleDialog(
-                this, getString(R.string.tmb_response, result), getString(tmbResponseId)
+                this, getString(R.string.tmb_response, result),
+                getString(tmbResponseId),
+                negativeText = "Salvar",
+                onNegativeClick = { SaveHelper.salvarImc(this, result) }
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }

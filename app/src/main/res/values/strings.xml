@@ -67,5 +67,6 @@
     <string name="pgc_woman_very_bad">Obesidade! Alto risco à saúde. </string>
 
     <string name="pgc_response">Seu PGC é: %1$.2f %%</string>
+    <string name="saved">Registro Salvo com sucesso!</string>
 
 </resources>

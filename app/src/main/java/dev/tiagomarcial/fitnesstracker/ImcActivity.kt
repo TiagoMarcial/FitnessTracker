@@ -42,7 +42,6 @@ class ImcActivity : AppCompatActivity() {
                 getString(imcResponseId),
                 negativeText = "Salvar",
                 onNegativeClick = { SaveHelper.salvarImc(this, result) }
-
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }
