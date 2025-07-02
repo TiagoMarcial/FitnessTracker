@@ -69,4 +69,7 @@
     <string name="pgc_response">Seu PGC é: %1$.2f %%</string>
     <string name="saved">Registro Salvo com sucesso!</string>
 
+    //Results
+    <string name="list_response">resultado: %1$.2f, data: %2$s</string>
+
 </resources>
