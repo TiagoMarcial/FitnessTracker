@@ -50,7 +50,7 @@ class PgcActivity : AppCompatActivity() {
                 this, getString(R.string.pgc_response, pgcResult),
                 getString(pgcResponse),
                 negativeText = "Salvar",
-                onNegativeClick = { SaveHelper.salvarImc(this, pgcResult) }
+                onNegativeClick = { SaveHelper.salvarResult(this, pgcResult, "pgc") }
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }

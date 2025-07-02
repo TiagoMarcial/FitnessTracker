@@ -50,7 +50,7 @@ class TmbActivity : AppCompatActivity() {
                 this, getString(R.string.tmb_response, result),
                 getString(tmbResponseId),
                 negativeText = "Salvar",
-                onNegativeClick = { SaveHelper.salvarImc(this, result) }
+                onNegativeClick = { SaveHelper.salvarResult(this, result, "tmb") }
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }

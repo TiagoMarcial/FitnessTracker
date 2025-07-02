@@ -80,7 +80,7 @@ class GetActivity : AppCompatActivity() {
                 getString(R.string.get_response, getResult),
                 getString(getResponse),
                 negativeText = "Salvar",
-                onNegativeClick = { SaveHelper.salvarImc(this, getResult) }
+                onNegativeClick = { SaveHelper.salvarResult(this, getResult, "get") }
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }
