@@ -75,7 +75,8 @@ class ListCalcActivity : AppCompatActivity() {
 
                 val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale("pt", "BR"))
                 val data = sdf.format(item.createdDate)
-                tv.text = getString(R.string.list_response, res, data)
+                val type = item.type
+                tv.text = type + " " + getString(R.string.list_response, res, data)
             }
         }
     }
