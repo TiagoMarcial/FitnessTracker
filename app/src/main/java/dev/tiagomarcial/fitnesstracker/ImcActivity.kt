@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import dev.tiagomarcial.fitnesstracker.model.App
 
 
@@ -18,6 +19,10 @@ class ImcActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imc)
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
 
         val editWeight: EditText = findViewById(R.id.edit_imc_weight)
         val editHeight: EditText = findViewById(R.id.edit_imc_height)
@@ -56,11 +61,13 @@ class ImcActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_search){
-            val intent = Intent(this, ListCalcActivity::class.java)
-            this.startActivity(intent)
+        return when (item.itemId) {
+            R.id.menu_search -> {
+                navigationHelper.abrirResultados(this, "imc")
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
-        return super.onOptionsItemSelected(item)
     }
 }
 

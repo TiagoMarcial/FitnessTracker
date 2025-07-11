@@ -1,48 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ImcActivity">
 
-    <LinearLayout
-        android:id="@+id/main"
+    <!-- Toolbar no topo -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical"
-        tools:context=".ImcActivity">
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="@string/app_name"
+        android:titleTextColor="@android:color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <TextView
-            style="@style/TextViewForm"
-            android:layout_width="wrap_content"
+    <!-- Conteúdo com ScrollView -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:text="@string/imc_desc" />
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <EditText
-            android:id="@+id/edit_imc_weight"
-            style="@style/TextViewForm"
-            android:hint="@string/weight"
-            android:inputType="number"
-            android:maxLength="3" />
+            <TextView
+                style="@style/TextViewForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="@string/imc_desc" />
 
-        <EditText
-            android:id="@+id/edit_imc_height"
-            style="@style/TextViewForm"
-            android:hint="@string/height"
-            android:inputType="number"
-            android:maxLength="3" />
+            <EditText
+                android:id="@+id/edit_imc_weight"
+                style="@style/TextViewForm"
+                android:hint="@string/weight"
+                android:inputType="number"
+                android:maxLength="3" />
 
-        <Button
-            android:id="@+id/btn_imc_send"
-            style="@style/TextViewForm"
-            android:backgroundTint="@color/black"
-            android:text="@string/calc" />
+            <EditText
+                android:id="@+id/edit_imc_height"
+                style="@style/TextViewForm"
+                android:hint="@string/height"
+                android:inputType="number"
+                android:maxLength="3" />
 
+            <Button
+                android:id="@+id/btn_imc_send"
+                style="@style/TextViewForm"
+                android:backgroundTint="@color/black"
+                android:text="@string/calc" />
 
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
-</ScrollView>
+</LinearLayout>
