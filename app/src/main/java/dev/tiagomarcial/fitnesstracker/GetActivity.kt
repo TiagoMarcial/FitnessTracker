@@ -2,6 +2,8 @@ package dev.tiagomarcial.fitnesstracker
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -9,6 +11,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.Toast
+import android.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,6 +31,12 @@ class GetActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+
+
         var editWeight: EditText = findViewById(R.id.edit_get_weight)
         var editHeight: EditText = findViewById(R.id.edit_get_height)
         var editAge: EditText = findViewById(R.id.edit_get_age)
@@ -83,6 +92,20 @@ class GetActivity : AppCompatActivity() {
                 onNegativeClick = { SaveHelper.salvarResult(this, getResult, "get") }
             )
             DialogHelper.hideKeyboard(this, currentFocus)
+        }
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_search -> {
+                navigationHelper.abrirResultados(this, "get")
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

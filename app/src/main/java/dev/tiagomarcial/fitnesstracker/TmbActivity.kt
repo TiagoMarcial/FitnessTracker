@@ -2,12 +2,15 @@ package dev.tiagomarcial.fitnesstracker
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
 class TmbActivity : AppCompatActivity() {
     private lateinit var editWeight: EditText
@@ -18,6 +21,9 @@ class TmbActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tmb)
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
         editWeight = findViewById(R.id.edit_tmb_weight)
         editHeight = findViewById(R.id.edit_tmb_height)
@@ -53,6 +59,20 @@ class TmbActivity : AppCompatActivity() {
                 onNegativeClick = { SaveHelper.salvarResult(this, result, "tmb") }
             )
             DialogHelper.hideKeyboard(this, currentFocus)
+        }
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_search -> {
+                navigationHelper.abrirResultados(this, "tmb")
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

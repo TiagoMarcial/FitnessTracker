@@ -1,6 +1,8 @@
 package dev.tiagomarcial.fitnesstracker
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
@@ -8,6 +10,7 @@ import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -21,6 +24,10 @@ class PgcActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
         var editWeight: EditText = findViewById(R.id.edit_pgc_weight)
         var editHeight: EditText = findViewById(R.id.edit_pgc_height)
         var editAge: EditText = findViewById(R.id.edit_pgc_age)
@@ -53,6 +60,21 @@ class PgcActivity : AppCompatActivity() {
                 onNegativeClick = { SaveHelper.salvarResult(this, pgcResult, "pgc") }
             )
             DialogHelper.hideKeyboard(this, currentFocus)
+        }
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_search -> {
+                navigationHelper.abrirResultados(this, "pgc")
+                true
+
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
