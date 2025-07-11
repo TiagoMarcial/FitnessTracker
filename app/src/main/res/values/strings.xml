@@ -71,5 +71,6 @@
 
     //Results
     <string name="list_response">resultado: %1$.2f, data: %2$s</string>
+    <string name="search">Buscar</string>
 
 </resources>

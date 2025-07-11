@@ -1,8 +1,11 @@
 package dev.tiagomarcial.fitnesstracker
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -46,4 +49,19 @@ class ImcActivity : AppCompatActivity() {
             DialogHelper.hideKeyboard(this, currentFocus)
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_search){
+            val intent = Intent(this, ListCalcActivity::class.java)
+            this.startActivity(intent)
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
+
+
