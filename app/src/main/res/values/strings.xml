@@ -29,7 +29,7 @@
         Preencha os campos de peso, altura, idade e sexo para descobrir o seu TMB.</string>
     <string name="tmb_severely_low_weight">TMB muito baixa: Pode indicar baixa massa muscular ou condições que reduzem o metabolismo (ex.: hipotireoidismo, sedentarismo).</string>
     <string name="tmb_low_weight">TMB baixa: Comum em mulheres, pessoas com menor massa muscular ou com baixa atividade física.</string>
-    <string name="tmb_normal">TMB Média: Faixa comum para pessoas com estilo de vida moderadamente ativo e composição corporal balanceada.</string>
+    <string name="tmb_normal">TMB média: Faixa comum para pessoas com estilo de vida moderadamente ativo e composição corporal balanceada.</string>
     <string name="tmb_hight_weight">TMB alta: Comum em homens, pessoas com maior massa muscular ou que praticam atividades físicas regulares.</string>
     <string name="tmb_severely_hight_weight">TMB muito alta: Geralmente encontrada em pessoas com alta massa muscular ou atletas que praticam exercícios intensos.</string>
     <string name="tmb_response">Seu TMB é: %1$.2f kcal</string>
