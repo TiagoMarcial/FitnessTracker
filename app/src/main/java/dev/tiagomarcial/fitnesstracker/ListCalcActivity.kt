@@ -52,8 +52,7 @@ class ListCalcActivity : AppCompatActivity() {
         }.start()
     }
     private inner class ListCalcAdapter(
-        private val listCalc: List<Calc>
-    ) : RecyclerView.Adapter<ListCalcAdapter.ListCalcViewHolder>() {
+        private val listCalc: List<Calc>) : RecyclerView.Adapter<ListCalcAdapter.ListCalcViewHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListCalcViewHolder {
             val view = layoutInflater.inflate(android.R.layout.simple_list_item_1, parent, false)
             return ListCalcViewHolder(view)
@@ -77,6 +76,16 @@ class ListCalcActivity : AppCompatActivity() {
                 val data = sdf.format(item.createdDate)
                 val type = item.type
                 tv.text = type + " " + getString(R.string.list_response, res, data)
+
+                itemView.setOnLongClickListener {
+                    DialogHelper.showOptionsDialog(
+                        context = itemView.context,
+                        onEditClick = { editarRegistro(item) },
+                        onDeleteClick = { excluirRegistro(item) }
+                    )
+                    true
+                }
+
             }
         }
     }

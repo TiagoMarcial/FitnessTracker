@@ -27,4 +27,22 @@ object DialogHelper {
             context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(view?.windowToken, 0)
     }
+
+    fun showOptionsDialog(
+        context: Context,
+        onEditClick: () -> Unit,
+        onDeleteClick: () -> Unit
+    ) {
+        AlertDialog.Builder(context)
+            .setTitle("Escolha uma ação")
+            .setItems(arrayOf("Editar", "Excluir")) { _, which ->
+                when (which) {
+                    0 -> onEditClick()
+                    1 -> onDeleteClick()
+                }
+            }
+            .show()
+    }
+
+
 }
