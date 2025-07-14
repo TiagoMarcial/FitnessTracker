@@ -41,7 +41,7 @@ class GetActivity : AppCompatActivity() {
         var editHeight: EditText = findViewById(R.id.edit_get_height)
         var editAge: EditText = findViewById(R.id.edit_get_age)
         var editGender: RadioGroup = findViewById<RadioGroup>(R.id.genderGroup)
-
+        val calcId = intent.getLongExtra("calc_id", -1L)
 
         val spinner = findViewById<Spinner>(R.id.spinnerPhysicalActivity)
         val activityLevels = listOf(
@@ -89,7 +89,7 @@ class GetActivity : AppCompatActivity() {
                 getString(R.string.get_response, getResult),
                 getString(getResponse),
                 negativeText = "Salvar",
-                onNegativeClick = { SaveHelper.salvarResult(this, getResult, "get") }
+                onNegativeClick = { SaveHelper.salvarResult(this, getResult, "get", calcId) }
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }

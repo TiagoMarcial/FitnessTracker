@@ -33,6 +33,7 @@ class PgcActivity : AppCompatActivity() {
         var editAge: EditText = findViewById(R.id.edit_pgc_age)
         var editGender: RadioGroup = findViewById<RadioGroup>(R.id.genderGroupPGC)
         val btnSend: Button = findViewById(R.id.btn_pgc_send)
+        val calcId = intent.getLongExtra("calc_id", -1L)
 
         btnSend.setOnClickListener {
             if (!InputValidator.validate(editHeight.text.toString()) ||
@@ -57,7 +58,7 @@ class PgcActivity : AppCompatActivity() {
                 this, getString(R.string.pgc_response, pgcResult),
                 getString(pgcResponse),
                 negativeText = "Salvar",
-                onNegativeClick = { SaveHelper.salvarResult(this, pgcResult, "pgc") }
+                onNegativeClick = { SaveHelper.salvarResult(this, pgcResult, "pgc", calcId) }
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }

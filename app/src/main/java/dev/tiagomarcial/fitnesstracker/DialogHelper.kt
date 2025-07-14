@@ -30,19 +30,20 @@ object DialogHelper {
 
     fun showOptionsDialog(
         context: Context,
-        onEditClick: () -> Unit,
-        onDeleteClick: () -> Unit
+        onEdit: () -> Unit,
+        onDelete: () -> Unit
     ) {
+        val options = arrayOf("Editar", "Excluir")
+
         AlertDialog.Builder(context)
-            .setTitle("Escolha uma ação")
-            .setItems(arrayOf("Editar", "Excluir")) { _, which ->
+            .setTitle("O que deseja fazer?")
+            .setItems(options) { _, which ->
                 when (which) {
-                    0 -> onEditClick()
-                    1 -> onDeleteClick()
+                    0 -> onEdit()
+                    1 -> onDelete()
                 }
             }
+            .setNegativeButton("Cancelar", null)
             .show()
     }
-
-
 }

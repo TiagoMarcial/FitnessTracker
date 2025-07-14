@@ -23,6 +23,7 @@ class ImcActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+        val calcId = intent.getLongExtra("calc_id", -1L)
 
         val editWeight: EditText = findViewById(R.id.edit_imc_weight)
         val editHeight: EditText = findViewById(R.id.edit_imc_height)
@@ -49,7 +50,7 @@ class ImcActivity : AppCompatActivity() {
                 getString(R.string.imc_response, result),
                 getString(imcResponseId),
                 negativeText = "Salvar",
-                onNegativeClick = { SaveHelper.salvarResult(this, result, "imc") }
+                onNegativeClick = { SaveHelper.salvarResult(this, result, "imc", calcId)}
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }

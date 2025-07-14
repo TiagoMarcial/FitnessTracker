@@ -80,12 +80,33 @@ class ListCalcActivity : AppCompatActivity() {
                 itemView.setOnLongClickListener {
                     DialogHelper.showOptionsDialog(
                         context = itemView.context,
-                        onEditClick = { editarRegistro(item) },
-                        onDeleteClick = { excluirRegistro(item) }
+                        onEdit = {
+                            val intent = when (item.type) {
+                                "imc" -> Intent(itemView.context, ImcActivity::class.java)
+                                "tmb" -> Intent(itemView.context, TmbActivity::class.java)
+                                "pgc" -> Intent(itemView.context, PgcActivity::class.java)
+                                "get" -> Intent(itemView.context, GetActivity::class.java)
+                                else -> null
+                            }
+                            intent?.let {
+                                it.putExtra("calc_id", item.id)
+                                itemView.context.startActivity(it)
+                            }
+                        },
+                        onDelete = {
+                            Thread {
+                                val app = itemView.context.applicationContext as App
+                                val dao = app.db.calcDao()
+                                dao.delete(item)
+                                Handler(Looper.getMainLooper()).post {
+                                    (listCalc as MutableList).remove(item)
+                                    notifyDataSetChanged()
+                                }
+                            }.start()
+                        }
                     )
                     true
                 }
-
             }
         }
     }

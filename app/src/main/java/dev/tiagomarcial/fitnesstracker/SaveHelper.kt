@@ -9,11 +9,17 @@ import dev.tiagomarcial.fitnesstracker.model.App
 import dev.tiagomarcial.fitnesstracker.model.Calc
 
 object SaveHelper {
-    fun salvarResult(context: Context, result: Double, type: String) {
+    fun salvarResult(context: Context, result: Double, type: String, id: Long) {
         Thread {
             val app = context.applicationContext as App
             val dao = app.db.calcDao()
-            dao.insert(Calc(type = type, res = result))
+            if (id != -1L) {
+
+                dao.update(Calc(id = id, type = type, res = result))
+            } else {
+
+                dao.insert(Calc(type = type, res = result))
+            }
             Handler(Looper.getMainLooper()).post {
                 val intent = Intent(context, ListCalcActivity::class.java)
                 intent.putExtra("type", type)

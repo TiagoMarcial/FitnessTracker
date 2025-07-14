@@ -29,6 +29,7 @@ class TmbActivity : AppCompatActivity() {
         editHeight = findViewById(R.id.edit_tmb_height)
         editAge = findViewById(R.id.edit_tmb_age)
         editGender = findViewById<RadioGroup>(R.id.genderGroup)
+        val calcId = intent.getLongExtra("calc_id", -1L)
         val btnSend: Button = findViewById(R.id.btn_tmb_send)
 
         btnSend.setOnClickListener {
@@ -56,7 +57,7 @@ class TmbActivity : AppCompatActivity() {
                 this, getString(R.string.tmb_response, result),
                 getString(tmbResponseId),
                 negativeText = "Salvar",
-                onNegativeClick = { SaveHelper.salvarResult(this, result, "tmb") }
+                onNegativeClick = { SaveHelper.salvarResult(this, result, "tmb", calcId) }
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }
