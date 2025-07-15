@@ -1,4 +1,4 @@
-package dev.tiagomarcial.fitnesstracker
+package dev.tiagomarcial.fitnesstracker.utils.calculators
 
 enum class PhysicalActivityLevel(val multiplier: Double) {
     Sedentary(1.2),
@@ -11,15 +11,15 @@ enum class PhysicalActivityLevel(val multiplier: Double) {
         fun fromLabel(level: String): PhysicalActivityLevel {
             return when (level) {
 
-                "Sedentário" -> PhysicalActivityLevel.Sedentary
+                "Sedentário" -> Sedentary
 
-                "Leve" -> PhysicalActivityLevel.Light
+                "Leve" -> Light
 
-                "Moderado" -> PhysicalActivityLevel.Moderate
+                "Moderado" -> Moderate
 
-                "Ativo" -> PhysicalActivityLevel.Active
+                "Ativo" -> Active
 
-                "Extremo" -> PhysicalActivityLevel.Extreme
+                "Extremo" -> Extreme
 
                 else -> Sedentary
             }

@@ -1,4 +1,4 @@
-package dev.tiagomarcial.fitnesstracker
+package dev.tiagomarcial.fitnesstracker.utils.ui
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

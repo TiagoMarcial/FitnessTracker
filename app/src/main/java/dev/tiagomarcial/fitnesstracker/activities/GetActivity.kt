@@ -1,4 +1,4 @@
-package dev.tiagomarcial.fitnesstracker
+package dev.tiagomarcial.fitnesstracker.activities
 
 import android.os.Bundle
 import android.util.Log
@@ -11,12 +11,19 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import dev.tiagomarcial.fitnesstracker.R.id.btn_get_send
+import dev.tiagomarcial.fitnesstracker.utils.calculators.Calculator
+import dev.tiagomarcial.fitnesstracker.utils.helpers.DialogHelper
+import dev.tiagomarcial.fitnesstracker.model.Gender
+import dev.tiagomarcial.fitnesstracker.utils.calculators.HealthEvaluator
+import dev.tiagomarcial.fitnesstracker.utils.validators.InputValidator
+import dev.tiagomarcial.fitnesstracker.utils.calculators.PhysicalActivityLevel
+import dev.tiagomarcial.fitnesstracker.R
+import dev.tiagomarcial.fitnesstracker.utils.helpers.SaveHelper
+import dev.tiagomarcial.fitnesstracker.utils.helpers.navigationHelper
 
 
 class GetActivity : AppCompatActivity() {

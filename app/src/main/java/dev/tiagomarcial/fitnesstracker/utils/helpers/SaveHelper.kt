@@ -1,10 +1,10 @@
-package dev.tiagomarcial.fitnesstracker
+package dev.tiagomarcial.fitnesstracker.utils.helpers
 
 import android.content.Context
 import android.content.Intent
 import android.os.Handler
 import android.os.Looper
-import android.widget.Toast
+import dev.tiagomarcial.fitnesstracker.activities.ListCalcActivity
 import dev.tiagomarcial.fitnesstracker.model.App
 import dev.tiagomarcial.fitnesstracker.model.Calc
 

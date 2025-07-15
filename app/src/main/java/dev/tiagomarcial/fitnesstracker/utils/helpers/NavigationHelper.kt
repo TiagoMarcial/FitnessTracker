@@ -1,7 +1,8 @@
-package dev.tiagomarcial.fitnesstracker
+package dev.tiagomarcial.fitnesstracker.utils.helpers
 
 import android.content.Context
 import android.content.Intent
+import dev.tiagomarcial.fitnesstracker.activities.ListCalcActivity
 
 object navigationHelper {
     fun abrirResultados(context: Context, tipo: String) {

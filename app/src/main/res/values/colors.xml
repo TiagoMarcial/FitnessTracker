@@ -3,4 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorLightBlue">#ADD8E6</color>
+    <color name="corButtonImc">#005F73</color>
+    <color name="corButtonTmb">#6A040F</color>
+    <color name="corButtonGet">#264653</color>
+    <color name="corButtonPgc">#3C096C</color>
+
 </resources>

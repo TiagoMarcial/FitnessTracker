@@ -1,4 +1,4 @@
-package dev.tiagomarcial.fitnesstracker
+package dev.tiagomarcial.fitnesstracker.model
 
 enum class Gender {
     Male, Female;
@@ -6,9 +6,9 @@ enum class Gender {
     companion object {
         fun selectedGender(gender: String): Gender {
             return when (gender) {
-                "Masculino" -> Gender.Male
-                "Feminino" -> Gender.Female
-                else -> Gender.Male
+                "Masculino" -> Male
+                "Feminino" -> Female
+                else -> Male
             }
         }
     }

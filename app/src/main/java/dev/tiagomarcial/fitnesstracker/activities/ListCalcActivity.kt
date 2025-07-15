@@ -1,4 +1,4 @@
-package dev.tiagomarcial.fitnesstracker
+package dev.tiagomarcial.fitnesstracker.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,6 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +13,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import dev.tiagomarcial.fitnesstracker.utils.helpers.DialogHelper
+import dev.tiagomarcial.fitnesstracker.R
 import dev.tiagomarcial.fitnesstracker.model.App
 import dev.tiagomarcial.fitnesstracker.model.Calc
 import java.text.SimpleDateFormat

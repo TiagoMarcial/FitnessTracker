@@ -1,22 +1,22 @@
-package dev.tiagomarcial.fitnesstracker
+package dev.tiagomarcial.fitnesstracker.activities
 
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import dev.tiagomarcial.fitnesstracker.utils.ui.MainItem
+import dev.tiagomarcial.fitnesstracker.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,37 +26,42 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        val corButtonImc = ContextCompat.getColor(this, R.color.corButtonImc)
+        val corButtonTmb = ContextCompat.getColor(this, R.color.corButtonTmb)
+        val corButtonGet = ContextCompat.getColor(this, R.color.corButtonGet)
+        val corButtonPgc = ContextCompat.getColor(this, R.color.corButtonPgc)
+
         val mainItems = mutableListOf<MainItem>()
         mainItems.add(
             MainItem(
                 id = 1,
-                drawableID = R.drawable.baseline_no_meals_ouline_24,
+                drawableID = R.drawable.logo_imc,
                 textStringID = R.string.label_imc,
-                color = Color.BLUE
+                color = corButtonImc
             )
         )
         mainItems.add(
             MainItem(
                 id = 2,
-                drawableID = R.drawable.baseline_no_meals_ouline_24,
+                drawableID = R.drawable.logo_tmb,
                 textStringID = R.string.label_tmb,
-                color = Color.YELLOW
+                color = corButtonTmb
             )
         )
         mainItems.add(
             MainItem(
                 id = 3,
-                drawableID = R.drawable.ic_launcher_foreground,
-                textStringID = R.string.imc_normal,
-                color = Color.GRAY
+                drawableID = R.drawable.logo_get,
+                textStringID = R.string.label_get,
+                color = corButtonGet
             )
         )
         mainItems.add(
             MainItem(
                 id = 4,
-                drawableID = R.drawable.ic_launcher_foreground,
-                textStringID = R.string.imc_normal,
-                color = Color.MAGENTA
+                drawableID = R.drawable.logo_pgc,
+                textStringID = R.string.label_pgc,
+                color = corButtonPgc
             )
         )
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

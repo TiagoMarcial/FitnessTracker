@@ -1,7 +1,6 @@
-package dev.tiagomarcial.fitnesstracker
+package dev.tiagomarcial.fitnesstracker.activities
 
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -11,7 +10,13 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import dev.tiagomarcial.fitnesstracker.model.App
+import dev.tiagomarcial.fitnesstracker.utils.calculators.Calculator
+import dev.tiagomarcial.fitnesstracker.utils.helpers.DialogHelper
+import dev.tiagomarcial.fitnesstracker.utils.calculators.HealthEvaluator
+import dev.tiagomarcial.fitnesstracker.utils.validators.InputValidator
+import dev.tiagomarcial.fitnesstracker.R
+import dev.tiagomarcial.fitnesstracker.utils.helpers.SaveHelper
+import dev.tiagomarcial.fitnesstracker.utils.helpers.navigationHelper
 
 
 class ImcActivity : AppCompatActivity() {
@@ -50,7 +55,7 @@ class ImcActivity : AppCompatActivity() {
                 getString(R.string.imc_response, result),
                 getString(imcResponseId),
                 negativeText = "Salvar",
-                onNegativeClick = { SaveHelper.salvarResult(this, result, "imc", calcId)}
+                onNegativeClick = { SaveHelper.salvarResult(this, result, "imc", calcId) }
             )
             DialogHelper.hideKeyboard(this, currentFocus)
         }

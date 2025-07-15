@@ -1,4 +1,7 @@
-package dev.tiagomarcial.fitnesstracker
+package dev.tiagomarcial.fitnesstracker.utils.calculators
+
+import dev.tiagomarcial.fitnesstracker.R
+import dev.tiagomarcial.fitnesstracker.model.Gender
 
 object HealthEvaluator {
     fun imcResponse(imc: Double): Int = when {

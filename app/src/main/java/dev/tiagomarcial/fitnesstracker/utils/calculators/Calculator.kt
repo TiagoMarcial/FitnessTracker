@@ -1,4 +1,6 @@
-package dev.tiagomarcial.fitnesstracker
+package dev.tiagomarcial.fitnesstracker.utils.calculators
+
+import dev.tiagomarcial.fitnesstracker.model.Gender
 
 object Calculator {
     fun calculateImc(weight: Int, height: Int): Double {
