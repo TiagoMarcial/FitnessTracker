@@ -118,5 +118,5 @@ Todos os resultados calculados podem ser editados ou excluídos.
 > Projeto desenvolvido para fins de estudo e prática com Android.  
 > Feedbacks e sugestões são bem-vindos!
 
-[🔗 LinkedIn](linkedin.com/in/tiago-marcial)  
-[📧 Email](tiago.127@gmail.com)
+[🔗 LinkedIn](https://linkedin.com/in/tiago-marcial)  
+[📧 Email](mailto:tiago.127@gmail.com)  
