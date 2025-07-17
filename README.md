@@ -84,6 +84,19 @@ Todos os resultados calculados podem ser editados ou excluídos.
 │       └── InputValidator.kt
 ```
 
+---
+
+## 🧠 Padrões de Projeto Utilizados
+
+- **MVC (Model-View-Controller)**: Separação entre as atividades (View), lógica de cálculo e validação (Controller), e camada de dados com Room (Model).
+- **Singleton**: Aplicado na criação da instância única do banco de dados (`AppDatabase`).
+- **Repository Pattern**: Centraliza o acesso à fonte de dados, separando a lógica de acesso do restante da aplicação.
+- **Adapter Pattern**: Utilizado nos adaptadores das listas para exibir os resultados armazenados.
+- **Factory Method** *(implícito)*: Criação padronizada de objetos auxiliares e dialogs por meio de helpers.
+- **Strategy Pattern** *(parcial)*: Diferentes tipos de cálculos encapsulados em classes distintas (`Calculator.kt`, `HealthEvaluator.kt`, etc).
+
+---
+
 ## 🖼️ Screenshots
 
 <p align="center">
