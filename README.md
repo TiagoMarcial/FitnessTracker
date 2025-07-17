@@ -88,11 +88,29 @@ Todos os resultados calculados podem ser editados ou excluídos.
 
 ## 🧠 Padrões de Projeto Utilizados
 
-- **MVC (Model-View-Controller)**: Separação entre as atividades (View), lógica de cálculo e validação (Controller), e camada de dados com Room (Model).
-- **Singleton**: Aplicado na criação da instância única do banco de dados (`AppDatabase`).
-- **Repository Pattern**: Centraliza o acesso à fonte de dados, separando a lógica de acesso do restante da aplicação.
-- **Adapter Pattern**: Utilizado nos adaptadores das listas para exibir os resultados armazenados.
-- **Strategy Pattern** *(parcial)*: Diferentes tipos de cálculos encapsulados em classes distintas (`Calculator.kt`, `HealthEvaluator.kt`, etc).
+- **MVC (Model-View-Controller)**  
+  Separação entre as *Activities* (View), lógica de cálculo e validação (Controller), e camada de dados com Room (Model).
+
+- **Singleton Pattern**  
+  Utilizado nas classes `App`, `SaveHelper`, `DialogHelper` e `NavigationHelper`, garantindo instâncias únicas acessíveis globalmente, além da criação da instância única do banco de dados (`AppDatabase`).
+
+- **Strategy Pattern** *(implementação parcial)*  
+  Aplicado indiretamente nas funções de cálculo em `Calculator.kt`, onde cada cálculo (IMC, TMB, GET etc.) é tratado de forma intercambiável conforme o contexto. Também presente em `HealthEvaluator.kt`.
+
+- **Adapter Pattern**  
+  Usado nos adaptadores de lista para exibição dos registros salvos, seguindo o padrão de separação entre dados e apresentação.
+
+- **Repository Pattern** *(implícito)*  
+  A estrutura `CalcDao` e sua integração com o `AppDatabase` centralizam o acesso aos dados, separando a lógica de persistência do restante da aplicação.
+
+- **Helper / Utility Classes**  
+  Classes utilitárias como:
+  - `DialogHelper`: cria diálogos reutilizáveis;
+  - `NavigationHelper`: encapsula a navegação entre telas;
+  - `SaveHelper`: gerencia a lógica de salvamento no banco e redirecionamento;
+  - `InputValidator`: valida campos antes de cálculos ou persistência.
+
+Esses padrões foram adotados para promover **organização**, **reuso de código** e **separação de responsabilidades**, facilitando a manutenção e expansão futura do projeto.
 
 ---
 
